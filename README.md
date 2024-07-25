@@ -1,4 +1,3 @@
-Here is the professional README file for your "Chatbots Hub" project:
 
 # Chatbots Hub (Under Development)
 
@@ -22,15 +21,15 @@ Chatbots Hub is a platform where users can interact with various LLM models in o
 
 Here are screenshots of the application:
 
-<img src="https://raw.githubusercontent.com/atta541/Chatbots-Hub/main/Screenshot%202024-07-25%20194342.png" width="300">
-<img src="https://raw.githubusercontent.com/atta541/Chatbots-Hub/main/Screenshot%202024-07-25%20194358.png" width="300">
-<img src="https://raw.githubusercontent.com/atta541/Chatbots-Hub/main/Screenshot%202024-07-25%20194408.png" width="300">
-<img src="https://raw.githubusercontent.com/atta541/Chatbots-Hub/main/Screenshot%202024-07-25%20194454.png" width="300">
-<img src="https://raw.githubusercontent.com/atta541/Chatbots-Hub/main/Screenshot%202024-07-25%20194524.png" width="300">
+<img src="https://raw.githubusercontent.com/atta541/Chatbots-Hub/main/Screenshot%202024-07-25%20194342.png" width="500">
+<img src="https://raw.githubusercontent.com/atta541/Chatbots-Hub/main/Screenshot%202024-07-25%20194358.png" width="500">
+<img src="https://raw.githubusercontent.com/atta541/Chatbots-Hub/main/Screenshot%202024-07-25%20194408.png" width="500">
+<img src="https://raw.githubusercontent.com/atta541/Chatbots-Hub/main/Screenshot%202024-07-25%20194454.png" width="500">
+<img src="https://raw.githubusercontent.com/atta541/Chatbots-Hub/main/Screenshot%202024-07-25%20194524.png" width="500">
 
 ## Video Demonstration
 
-<video width="600" controls>
+<video width="800" controls>
   <source src="https://raw.githubusercontent.com/atta541/Chatbots-Hub/main/freecompress-20240725_194018.mp4" type="video/mp4">
   Your browser does not support the video tag.
 </video>
@@ -58,7 +57,4 @@ python manage.py test
 
 [![portfolio](https://img.shields.io/badge/my_portfolio-000?style=for-the-badge&logo=ko-fi&logoColor=white)](https://atta-ur-rehman.vercel.app/)
 [![linkedin](https://img.shields.io/badge/linkedin-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/atta-ur-rehman-4104b1181/)
-
----
-
-This should make your README file look professional and informative for your "Chatbots Hub" project.
+```
