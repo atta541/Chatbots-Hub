@@ -1,6 +1,3 @@
-Great! Now that your video is available at the release link, you can update your README file to include this link. Here’s how you can format it:
-
-```markdown
 # Chatbots Hub (Under Development)
 
 ## Overview
@@ -60,4 +57,3 @@ python manage.py test
 [![linkedin](https://img.shields.io/badge/linkedin-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/atta-ur-rehman-4104b1181/)
 ```
 
-This should make your README file both professional and functional, providing a clear view of your project and easy access to the video demonstration.
