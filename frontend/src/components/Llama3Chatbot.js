@@ -1,31 +1,27 @@
-
-
-
-
-
-
 import React, { useState, useRef, useEffect } from 'react';
 import axios from 'axios';
 
 const Llama3Chatbot = () => {
     const [message, setMessage] = useState('');
     const [chatHistory, setChatHistory] = useState([]);
-    const [darkMode, setDarkMode] = useState(false); // State for dark mode
+    const [darkMode, setDarkMode] = useState(false);
     const chatContainerRef = useRef(null);
 
     const handleSubmit = async (e) => {
         e.preventDefault();
         if (message.trim() === '') return;
 
-        // Add user message to chat history
         const userMessage = { type: 'user', text: message };
         setChatHistory(prev => [...prev, userMessage]);
 
         try {
+            // if(llama3):
             const res = await axios.post('http://127.0.0.1:8000/api/llama3/', { message });
+            // if(llama3.1):
+            //const res = await axios.post('http://127.0.0.1:8000/api/llama3.1/', { message });
+
             const botResponse = res.data.response;
 
-            // Add bot response to chat history
             const botMessage = { type: 'bot', text: botResponse };
             setChatHistory(prev => [...prev, botMessage]);
         } catch (error) {
@@ -52,9 +48,9 @@ const Llama3Chatbot = () => {
     }, [chatHistory]);
 
     return (
-        <div className={`flex flex-col h-full w-full font-sans ${darkMode ? 'bg-gray-900' : 'bg-gray-600'}`}>
-<div className={`flex justify-between items-center p-5 border-b border-gray-300 ${darkMode ? 'bg-gray-900' : 'bg-gray-600'}`}>
-<h2 className={`text-2xl  text-white  ${darkMode ? 'text-white' : 'text-gray-800'}`}>Chat with LLaMA-3 😳</h2>
+        <div className={`flex flex-col h-full font-sans ${darkMode ? 'bg-gray-900' : ''}`} style={{ width: '100%' }}>
+            <div className={`flex justify-between items-center  -mt-5  border-gray-300 ${darkMode ? '' : ''}`}>
+                <h2 className={`text-2xl text-black mt-8 ${darkMode ? 'text-white' : ''}`}>Chat with LLaMA-3 😳</h2>
                 <button
                     className="py-2 px-4 bg-blue-500 text-white rounded transition-colors duration-300 hover:bg-blue-700"
                     onClick={toggleDarkMode}
@@ -62,15 +58,17 @@ const Llama3Chatbot = () => {
                     {darkMode ? 'Light Mode' : 'Dark Mode'}
                 </button>
             </div>
-            <div className={`flex-1 overflow-y-auto p-5 border border-gray-300 rounded-lg ${darkMode ? 'bg-gray-800 text-white' : 'bg-white text-black'}`} style={{ maxHeight: 'calc(100vh - 140px)' }}>
-                <div className="flex flex-col">
+
+            <div className={`flex-1 overflow-y-auto p-5 border-none  ${darkMode ? 'bg-gray-800 text-white' : 'bg-white text-black'}`} style={{ maxHeight: 'calc(100vh - 140px)' }}>
+
+                <div className="flex flex-col " >
                     {chatHistory.map((msg, index) => (
                         <div
                             key={index}
                             className={`flex ${msg.type === 'user' ? 'justify-end' : 'justify-start'} mb-2`}
                         >
                             <div
-                                className={`relative p-3 rounded-lg ${msg.type === 'user' ? (darkMode ? 'bg-blue-400 text-white' : 'bg-black text-white') : (darkMode ? 'bg-gray-700 text-white' : 'bg-gray-200 text-black')}`}
+                                className={`relative p-3 rounded-lg border-none ${msg.type === 'user' ? (darkMode ? 'bg-blue-400 text-white' : 'bg-black text-white') : (darkMode ? 'bg-gray-700 text-white' : 'bg-gray-200 text-black')}`}
                                 style={{ maxWidth: '70%' }}
                             >
                                 {msg.text}
@@ -85,7 +83,7 @@ const Llama3Chatbot = () => {
                             </div>
                         </div>
                     ))}
-                    <div ref={chatContainerRef} /> {/* Scroll reference */}
+                    <div ref={chatContainerRef} />
                 </div>
             </div>
             <form className="p-5 border-t border-gray-300 bg-white" onSubmit={handleSubmit}>

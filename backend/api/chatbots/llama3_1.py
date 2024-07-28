@@ -12,8 +12,7 @@ from langchain.chains import ConversationChain
 llm = ChatGroq(
     temperature=0,
     groq_api_key="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",  # Replace with a secure method of handling API keys
-    model_name="llama3-70b-8192"
-#    model_name='llama-3.1-70b-versatile'
+   model_name='llama-3.1-70b-versatile'
 )
 memory = ConversationBufferMemory()
 
@@ -24,7 +23,8 @@ conversation = ConversationChain(
     memory=memory
 )
 
-class Llama3APIView(APIView):
+
+class Llama3_1APIView(APIView):
     def post(self, request, *args, **kwargs):
         user_input = request.data.get('message')
         if user_input:

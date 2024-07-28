@@ -51,9 +51,9 @@ const Gemma = () => {
     }, [chatHistory]);
 
     return (
-        <div className={`flex flex-col h-full w-full font-sans ${darkMode ? 'bg-gray-900' : 'bg-gray-600'}`}>
-<div className={`flex justify-between items-center p-5 border-b border-gray-300 ${darkMode ? 'bg-gray-900' : 'bg-gray-600'}`}>
-<h2 className={`text-2xl text-white ${darkMode ? 'text-white' : 'text-gray-800'}`}>Chat with Gemma 😳</h2>
+        <div className={`flex flex-col h-full font-sans ${darkMode ? 'bg-gray-900' : ''}`} style={{ width: '100%' }}>
+            <div className={`flex justify-between items-center  -mt-5  border-gray-300 ${darkMode ? '' : ''}`}>
+                <h2 className={`text-2xl text-black mt-8 ${darkMode ? 'text-white' : ''}`}>Chat with Gemma 😳</h2>
                 <button
                     className="py-2 px-4 bg-blue-500 text-white rounded transition-colors duration-300 hover:bg-blue-700"
                     onClick={toggleDarkMode}
@@ -61,7 +61,7 @@ const Gemma = () => {
                     {darkMode ? 'Light Mode' : 'Dark Mode'}
                 </button>
             </div>
-            <div className={`flex-1 overflow-y-auto p-5 border border-gray-300 rounded-lg ${darkMode ? 'bg-gray-800 text-white' : 'bg-white text-black'}`} style={{ maxHeight: 'calc(100vh - 140px)' }}>
+            <div className={`flex-1 overflow-y-auto p-5  ${darkMode ? 'bg-gray-800 text-white' : 'bg-white text-black'}`} style={{ maxHeight: 'calc(100vh - 140px)' }}>
                 <div className="flex flex-col">
                     {chatHistory.map((msg, index) => (
                         <div
