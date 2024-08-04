@@ -92,8 +92,6 @@
 
 
 
-
-
 from rest_framework.permissions import IsAuthenticated
 from rest_framework_simplejwt.authentication import JWTAuthentication
 from rest_framework.decorators import api_view, permission_classes
@@ -126,8 +124,18 @@ def login_page(request):
 def logout_view(request):
     # JWT Token removal should be handled by client-side
     return Response({"message": "Logged out successfully"}, status=status.HTTP_200_OK)
+from rest_framework.permissions import AllowAny
+from rest_framework_simplejwt.authentication import JWTAuthentication
+from rest_framework.decorators import api_view, permission_classes
+from rest_framework.response import Response
+from rest_framework import status
+from django.contrib.auth import authenticate, login, logout
+from django.contrib.auth.models import User
+from django.core.exceptions import ValidationError
+from django.core.validators import validate_email
 
 @api_view(['POST'])
+@permission_classes([AllowAny])
 def register_page(request):
     first_name = request.data.get('first_name')
     last_name = request.data.get('last_name')
